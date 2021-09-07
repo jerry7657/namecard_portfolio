@@ -1,0 +1,468 @@
+// Color
+$kaifun-color: #c00000;
+$text-color-dark: #292b2c;
+
+// Animation
+$animation-curve: cubic-bezier(1, 0, 0, 1);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-size: 10px;
+  height: 100%;
+  //   background: #000;
+}
+
+// Container
+
+.container {
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+// Row
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+// header
+
+.header-warp {
+  background: white;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: block;
+}
+
+.contact-header {
+  position: relative;
+  background-color: $kaifun-color;
+  z-index: 9999;
+
+  &__container {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 100%;
+  }
+
+  &__list {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      padding: 5px 5px 5px 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 0 15px;
+        transition: 0.5s;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+// Navbar
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  background: white;
+  z-index: 10;
+
+  .checkbtn {
+    font-size: 3rem;
+    color: $text-color-dark;
+    float: right;
+    display: none;
+    background: white;
+    padding: 1.5rem;
+  }
+
+  .cancelbtn {
+    font-size: 3rem;
+    color: $text-color-dark;
+    float: right;
+    display: none;
+    background: white;
+    padding: 1.5rem;
+  }
+
+  #check {
+    display: none;
+
+    &1,
+    &2,
+    &3,
+    &4 {
+      display: none;
+    }
+  }
+
+  &__brand {
+    padding: 13px;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    background: white;
+  }
+
+  &__container {
+    display: flex;
+    flex-basis: auto;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    background: white;
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__link {
+    padding: 0;
+    font-size: 1.8rem;
+    margin: 0 1.6rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: $text-color-dark;
+    transition: all 0.3s ease-in-out;
+
+    i {
+      margin-left: 0.5rem;
+    }
+
+    &:hover {
+      color: $kaifun-color;
+    }
+  }
+
+  &__item {
+    &--main {
+      padding: 13px 0;
+    }
+
+    &--sub {
+      font-size: 1.6rem;
+
+      &:hover {
+        padding-left: 0.3rem;
+      }
+    }
+  }
+}
+
+.dropdown {
+  list-style: none;
+
+  ul {
+    list-style: none;
+  }
+
+  &:hover .dropdown__menu {
+    opacity: 1;
+    margin-top: 1rem;
+    display: block;
+  }
+
+  &__menu {
+    width: 20rem;
+    position: absolute;
+    display: none;
+    opacity: 0;
+    margin-top: 2rem;
+    transition: all 0.3s ease-in-out;
+    background: white;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .navbar {
+    .checkbtn {
+      display: block;
+      position: relative;
+      z-index: 20;
+    }
+
+    .cancelbtn {
+      display: none;
+      position: relative;
+      z-index: 20;
+    }
+
+    &__container {
+      //   display: none;
+      display: block;
+      opacity: 0;
+      left: 0;
+      right: 0;
+      top: -50rem;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    &__list {
+      flex-direction: column;
+      //   display: none;
+      overflow-y: auto;
+      justify-content: center;
+      max-height: 80vh;
+      height: 100%;
+      overflow-y: scroll;
+    }
+
+    #check:checked ~ .navbar__container {
+      top: 7rem;
+      //   display: block;
+      opacity: 1;
+    }
+
+    #check:checked ~ .checkbtn {
+      display: none;
+    }
+
+    #check:checked ~ .cancelbtn {
+      display: block;
+    }
+
+    &__item--main {
+      &:hover {
+        background: rgb(231, 231, 231);
+      }
+
+      &:hover span {
+        color: $kaifun-color;
+      }
+    }
+
+    &__link {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .dropdown {
+    &__menu {
+      width: 100%;
+      position: relative;
+      display: none;
+      background: rgb(231, 231, 231);
+    }
+
+    #check1:checked ~ .dropdown__menu {
+      display: block;
+      opacity: 1;
+    }
+
+    #check2:checked ~ .dropdown__menu {
+      display: block;
+      opacity: 1;
+    }
+
+    #check3:checked ~ .dropdown__menu {
+      display: block;
+      opacity: 1;
+    }
+
+    #check4:checked ~ .dropdown__menu {
+      display: block;
+      opacity: 1;
+    }
+
+    &:hover .dropdown__menu {
+      opacity: 0;
+      margin-top: 2rem;
+      display: none;
+    }
+  }
+}
+
+// Banner
+
+.banner {
+  &__container {
+    position: relative;
+    width: 100%;
+    margin-top: 10rem;
+    z-index: 1;
+  }
+
+  &__img {
+    background-image: url(https://www.kaifun.com.tw/storage/website/kv/kaifun20210705164045_PC-KV.png);
+    height: 65rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__title-bg {
+    position: absolute;
+    height: 5rem;
+    z-index: 10;
+    overflow: hidden;
+    bottom: 10px;
+  }
+
+  &__title {
+    width: auto;
+    position: relative;
+    display: inline-block;
+    background: 0 0;
+    background-color: #fff;
+    min-width: 160px;
+    border-radius: 45px;
+    height: 100px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 10px 0 0 0;
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .banner {
+    &__img {
+      height: 30rem;
+    }
+
+    &__title-bg {
+      margin-left: -270px;
+      left: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .banner {
+    &__img {
+      height: 50rem;
+    }
+
+    &__title-bg {
+      margin-left: -360px;
+      left: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .banner {
+    &__img {
+      height: 60rem;
+    }
+
+    &__title-bg {
+      margin-left: -480px;
+      left: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .banner {
+    &__img {
+      height: 70rem;
+    }
+
+    &__title-bg {
+      margin-left: -570px;
+      left: 50%;
+    }
+  }
+}
+
+// Menu
+
+.menu {
+  padding-top: 5rem;
+  padding-bottom: 12rem;
+
+  &__container {
+    padding: 0 3rem;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__outer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__list {
+    display: block;
+    width: 1820px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    width: 149.143px;
+    margin-right: 16px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.8rem 0;
+    border: solid 1px $kaifun-color;
+    color: $kaifun-color;
+    border-radius: 50px;
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+}

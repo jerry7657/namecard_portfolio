@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="nav-container">
+        <!-- 左側menu呼叫按鈕 -->
+        <input type="checkbox" id="check">
+        <label for="check" class="nav-container__check-btn">
+        </label>
+        <nav class="nav">
+            <ul class="nav__list">
+                <!-- logo -->
+                <li class="nav__list-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 480 860" fill="none">
+                        <path d="M240 400V120L420 0V220L480 180V240L360 320V100L300 140V360L240 400Z" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M180 60V0L0 120V760L60 720V620L120 580V840L180 800V480L60 560V500L180 420V120L60 200V140L180 60ZM60 260L120 220V280L60 320V260ZM120 340L60 380V440L120 400V340Z" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M240 460V780L360 700V860L420 820V660L480 620V560L420 600V340L240 460ZM360 440L300 480V680L360 640V440Z" />
+                    </svg>
+                </li>
+                <!-- 導覽列物件 -->
+                <li class="nav__list-item">
+                    About
+                </li>
+                <li class="nav__list-item">
+                    Work
+                    <!-- 下拉式選單物件 -->
+                    <ul class="nav__list-item-drop">
+                        <li>Portfolio</li>
+                        <li>Showcase</li>
+                    </ul>
+                </li>
+                <li class="nav__list-item">Contact</li>
+
+            </ul>
+        </nav>
+    </div>
+
+
+    <section>
+        <input type="checkbox" id="enter">
+        <label for="enter">
+            <div class="ncard__container">
+                <div class="ncard">
+                    <div class="wave__container">
+                        <div class="wave -one right"></div>
+                        <div class="wave -two right"></div>
+                        <div class="wave -three right"></div>
+                    </div>
+                    <h1 class="ncard__name">殷從硯</h1>
+                    <h4 class="ncard__eName">Jerry Yin</h4>
+                    <h4 class="ncard__job">網頁前端設計師</h4>
+                    <div class="ncard__detail">
+                        <div class="ncard__detail--short">
+                            <hr class="ncard__detail--hr">
+                            <p class="ncard__detail--intro">目前就讀資訊工程學系，目標是結合設計美學、行銷傳播以及網頁程式。
+                            </p>
+                        </div>
+                        <div class="ncard__detail--full">
+                            <hr class="ncard__detail--hr">
+                            <h1 class="ncard__detail--title">您好!非常高興認識你!</h1>
+                            <p class="ncard__detail--intro">
+                                我是殷從硯，畢業於台北淡江大學資訊傳播學系，目前正就讀淡江大學資工所資訊網路與多媒體研究所，致力於結合設計美學、行銷傳播與網頁開發，以全端工程師為志向。
+                            </p>
+                            <h1 class="ncard__detail--title">我擅長 :</h1>
+                            <p class="ncard__detail--intro">
+                                平面設計、影像後製、影片剪輯、動畫特效、HTML/CSS/JavaScript網站開發、React前端設計
+                            </p>
+                            <h1 class="ncard__detail--title">我正在學習 :</h1>
+                            <p class="ncard__detail--intro">
+                                SQL資料庫維護、React Native、教材設計、UI Library開發
+                            </p>
+                        </div>
+                    </div>
+                    <section class="cards">
+                        <h1 class="card__main-title">
+                            我的作品
+                        </h1>
+                        <div class="card-container">
+                            <a href="./web_project/apple/index.html" class="card">
+                                <div class="card__body">
+                                    <img src="./img/web_project_apple.png" alt="" class="card__image">
+                                    <h2 class="card__title">Apple網站模擬</h2>
+                                    <p class="card__description">以知名的Apple官方網站做為練習範例，練習大版面圖片與文字的排版。</p>
+                                </div>
+                                <button class="card__btn">點此瀏覽</button>
+                            </a>
+
+                            <a href="./web_project/kaifun/index.html" class="card">
+                                <div class="card__body">
+                                    <img src="./img/web_project_kaifun.png" alt="" class="card__image">
+                                    <h2 class="card__title">開飯網站模擬</h2>
+                                    <p class="card__description">川菜館--開飯，有著琳瑯滿目的菜色，以其官方網站來練習Grid大量項目的排版，以及RWD的實作。
+                                    </p>
+                                </div>
+                                <button class="card__btn">點此瀏覽</button>
+                            </a>
+
+                            <a href="/" class="card">
+                                <div class="card__body">
+                                    <img src="./img/web_project_ps.png" alt="" class="card__image">
+                                    <h2 class="card__title">PlayStation網站模擬</h2>
+                                    <p class="card__description">以PlayStation官方網站為範例，練習打造一個具有大版面排版與大量圖片網格排版的網頁</p>
+                                </div>
+                                <button class="card__btn">點此瀏覽</button>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </label>
+
+    </section>
+</body>
+
+</html>
